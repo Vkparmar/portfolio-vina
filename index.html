@@ -79,15 +79,21 @@
       background: linear-gradient(to right, var(--primary-pink), var(--primary-blue));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: typing 3s steps(14);
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid var(--primary-pink);
-    }
+       white-space: nowrap;
+       overflow: hidden;
+       width: 13ch;                         /* ✅ Limit to exactly 13 characters */
+       animation: typing 2s steps(13) 1, blink 0.7s step-end infinite;
+       border-right: 2px solid var(--primary-pink); /* Blinking cursor */
+     }
+
 
     @keyframes typing {
       from { width: 0 }
-      to { width: 100% }
+      to { width: 13ch }
+    }
+    @keyframes blink {
+      0%, 100% { border-color: transparent }
+      50% { border-color: var(--primary-pink) }
     }
 
     .header-text p {
