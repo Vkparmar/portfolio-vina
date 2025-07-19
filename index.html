@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -79,21 +80,36 @@
       background: linear-gradient(to right, var(--primary-pink), var(--primary-blue));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-       white-space: nowrap;
-       overflow: hidden;
-       width: 13ch;                         /* ✅ Limit to exactly 13 characters */
-       animation: typing 2s steps(13) 1, blink 0.7s step-end infinite;
-       border-right: 2px solid var(--primary-pink); /* Blinking cursor */
-     }
+      white-space: nowrap;
+      overflow: hidden;
+      width: 13ch;
+      /* ✅ Limit to exactly 13 characters */
+      animation: typing 2s steps(13) 1, blink 0.7s step-end infinite;
+      border-right: 2px solid var(--primary-pink);
+      /* Blinking cursor */
+    }
 
 
     @keyframes typing {
-      from { width: 0 }
-      to { width: 13ch }
+      from {
+        width: 0
+      }
+
+      to {
+        width: 13ch
+      }
     }
+
     @keyframes blink {
-      0%, 100% { border-color: transparent }
-      50% { border-color: var(--primary-pink) }
+
+      0%,
+      100% {
+        border-color: transparent
+      }
+
+      50% {
+        border-color: var(--primary-pink)
+      }
     }
 
     .header-text p {
@@ -104,18 +120,38 @@
 
 
 
-.profile-pic {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;              /* ✅ Zooms and crops to fit circle perfectly */
-  object-position: bottom center;    /* ✅ Focus on face (adjust if needed) */
-  border: 4px solid var(--primary-pink);
-  box-shadow: 0 0 15px var(--primary-pink);
-  display: block;
-  margin: 0 auto;
-  background-color: transparent;  /* ✅ Remove any visible white bg */
-}
+    .profile-frame {
+      position: relative;
+      width: 220px;
+      height: 220px;
+      box-shadow: 0 0 20px var(--primary-pink);
+      border-radius: 50%;
+    }
+
+    .leaf-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 220px;
+      z-index: 1;
+      border-radius: 50%;
+    }
+
+    .profile-pic {
+      position: absolute;
+      top: 0;
+      /* adjust based on alignment */
+      left: 0;
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      z-index: 2;
+      background: transparent;
+      box-shadow: 0 0 10px var(--primary-pink);
+    }
+
 
 
 
@@ -153,14 +189,16 @@
       -webkit-text-fill-color: transparent;
     }
 
-    .skills, .testimonials {
+    .skills,
+    .testimonials {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 15px;
     }
 
-    .skills div, .testimonial {
+    .skills div,
+    .testimonial {
       background: var(--card-bg);
       padding: 15px 30px;
       border-radius: 12px;
@@ -177,13 +215,15 @@
       color: var(--text-muted);
     }
 
-    .skills div:hover, .testimonial:hover {
+    .skills div:hover,
+    .testimonial:hover {
       background: #252545;
       color: var(--primary-pink);
       box-shadow: 0 0 15px var(--primary-pink);
     }
 
-    .project, .video-preview {
+    .project,
+    .video-preview {
       background: var(--card-bg);
       padding: 20px;
       border-radius: 12px;
@@ -191,16 +231,19 @@
       transition: 0.3s;
     }
 
-    .project:hover, .video-preview:hover {
+    .project:hover,
+    .video-preview:hover {
       transform: translateY(-5px);
       box-shadow: 0 0 15px var(--primary-blue);
     }
 
-    .project h3, .video-preview h3 {
+    .project h3,
+    .video-preview h3 {
       color: var(--primary-pink);
     }
 
-    .project p, .testimonial p {
+    .project p,
+    .testimonial p {
       color: var(--text-muted);
     }
 
@@ -209,13 +252,15 @@
       text-decoration: none;
     }
 
-    .project img, .video-preview video {
+    .project img,
+    .video-preview video {
       margin-top: 10px;
       width: 100%;
       border-radius: 10px;
     }
 
-    form input, form textarea {
+    form input,
+    form textarea {
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
@@ -260,9 +305,11 @@
         flex-direction: column-reverse;
         text-align: center;
       }
+
       .profile-pic {
-         margin-top: 20px;
+        margin-top: 20px;
       }
+
       .header-flex {
         flex-direction: column-reverse;
         text-align: center;
@@ -274,6 +321,7 @@
     }
   </style>
 </head>
+
 <body>
   <nav>
     <a href="#about">About</a>
@@ -289,18 +337,25 @@
         <p>Creative Web Developer</p>
         <a href="Veena_Resume.pdf" download class="cv-button">Download CV</a>
       </div>
-      <img src="my_pic.jpg" alt="Veena's Image" class="profile-pic" />
+      <div class="profile-frame">
+        <img src="leafy.jpg" alt="Leaf Shape" class="leaf-layer" />
+        <img src="./my_pic-removebg-preview.png" alt="Veena's Face" class="profile-pic" />
+      </div>
     </div>
   </header>
 
   <section id="about" class="fade">
     <h2>About Me</h2>
     <p>
-    I'm Veena, a passionate Web Developer with experience in HTML, CSS, JS, PHP, and Laravel. I love creating beautiful, clean, and functional websites that provide a great user experience. With a strong foundation in front-end and back-end technologies, I enjoy bringing designs to life in the browser.
-  </p>
-  <p>
-    I constantly explore new technologies and strive to write efficient, scalable, and well-documented code. My goal is to help businesses establish a solid online presence and convert their ideas into reality. Whether it's building a portfolio, e-commerce site, or a web app, I’m always up for the challenge.
-  </p>
+      I'm Veena, a passionate Web Developer with experience in HTML, CSS, JS, PHP, and Laravel. I love creating
+      beautiful, clean, and functional websites that provide a great user experience. With a strong foundation in
+      front-end and back-end technologies, I enjoy bringing designs to life in the browser.
+    </p>
+    <p>
+      I constantly explore new technologies and strive to write efficient, scalable, and well-documented code. My goal
+      is to help businesses establish a solid online presence and convert their ideas into reality. Whether it's
+      building a portfolio, e-commerce site, or a web app, I’m always up for the challenge.
+    </p>
   </section>
 
   <section id="skills" class="fade">
@@ -326,12 +381,12 @@
     <div class="project">
       <h3>Task Manager App</h3>
       <p> A simple and powerful JavaScript-based Task Manager Web App.
-          It allows users to add, edit, delete, complete, and filter tasks — all saved in localStorage.
-          Also supports Dark Mode toggle for a better user experience.    
+        It allows users to add, edit, delete, complete, and filter tasks — all saved in localStorage.
+        Also supports Dark Mode toggle for a better user experience.
       </p>
       <a href="https://vkparmar.github.io/TaskManagerApp/" target="_blank">View Live</a>
     </div>
-    
+
     <div class="video-preview">
       <h3>Project Demo Video</h3>
       <video controls>
@@ -393,4 +448,5 @@
     window.addEventListener("load", scrollReveal);
   </script>
 </body>
+
 </html>
