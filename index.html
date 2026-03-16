@@ -189,16 +189,16 @@
       -webkit-text-fill-color: transparent;
     }
 
-    .skills,
-    .testimonials {
+    .skills
+      {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 15px;
     }
 
-    .skills div,
-    .testimonial {
+    .skills div
+     {
       background: var(--card-bg);
       padding: 15px 30px;
       border-radius: 12px;
@@ -207,23 +207,17 @@
       box-shadow: 0 0 5px #222;
     }
 
-    .testimonial {
-      max-width: 300px;
-      text-align: center;
-      font-weight: normal;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
+    
 
-    .skills div:hover,
-    .testimonial:hover {
+    .skills div:hover
+     {
       background: #252545;
       color: var(--primary-pink);
       box-shadow: 0 0 15px var(--primary-pink);
     }
 
-    .project,
-    .video-preview {
+    .project
+     {
       background: var(--card-bg);
       padding: 20px;
       border-radius: 12px;
@@ -231,19 +225,19 @@
       transition: 0.3s;
     }
 
-    .project:hover,
-    .video-preview:hover {
+    .project:hover
+     {
       transform: translateY(-5px);
       box-shadow: 0 0 15px var(--primary-blue);
     }
 
-    .project h3,
-    .video-preview h3 {
+    .project h3
+     {
       color: var(--primary-pink);
     }
 
-    .project p,
-    .testimonial p {
+    .project p
+    {
       color: var(--text-muted);
     }
 
@@ -252,8 +246,8 @@
       text-decoration: none;
     }
 
-    .project img,
-    .video-preview video {
+    .project img
+     {
       margin-top: 10px;
       width: 100%;
       border-radius: 10px;
@@ -375,11 +369,13 @@
     <h2>Projects</h2>
     <div class="project">
       <h3>Portfolio Website</h3>
+      <img src="portfolio.png" alt="Personal Portfolio Website">
       <p>My personal responsive portfolio site.</p>
       <a href="https://vkparmar.github.io/portfolio-vina/" target="_blank">View Live</a>
     </div>
     <div class="project">
       <h3>Task Manager App</h3>
+      <img src="task-ss.png" alt="Task Manager Screenshot">
       <p> A simple and powerful JavaScript-based Task Manager Web App.
         It allows users to add, edit, delete, complete, and filter tasks — all saved in localStorage.
         Also supports Dark Mode toggle for a better user experience.
@@ -387,28 +383,10 @@
       <a href="https://vkparmar.github.io/TaskManagerApp/" target="_blank">View Live</a>
     </div>
 
-    <div class="video-preview">
-      <h3>Project Demo Video</h3>
-      <video controls>
-        <source src="project-demo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
+    
   </section>
 
-  <section class="fade">
-    <h2>Testimonials</h2>
-    <div class="testimonials">
-      <div class="testimonial">
-        <p>"Veena is an outstanding developer! Her attention to detail and creativity is unmatched."</p>
-        <strong>- Client A</strong>
-      </div>
-      <div class="testimonial">
-        <p>"She delivered our project on time and beyond expectations. Highly recommended!"</p>
-        <strong>- Client B</strong>
-      </div>
-    </div>
-  </section>
+  
 
   <section id="contact" class="fade">
     <h2>Contact Me</h2>
@@ -424,6 +402,10 @@
     <p>📧 Email: <a href="mailto:parmarvina14@gmail.com">parmarvina14@gmail.com</a></p>
     <p>🔗 LinkedIn: <a href="https://linkedin.com/in/parmar-vina" target="_blank">linkedin.com/in/parmar-vina</a></p>
     <p>🌐 Website: <a href="https://vkparmar.github.io/portfolio-vina" target="_blank">vkparmar.github.io</a></p>
+    <p>💻 GitHub:
+<a href="https://github.com/vkparmar" target="_blank">
+github.com/vkparmar
+</a></p>
     <p>✨ Crafted with passion by <strong>Veena</strong> &copy; 2025</p>
   </footer>
 
